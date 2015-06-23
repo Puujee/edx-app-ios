@@ -213,7 +213,7 @@
     [self.lbl_OrSignIn setTextColor:[UIColor colorWithRed:60.0 / 255.0 green:64.0 / 255.0 blue:69.0 / 255.0 alpha:1.0]];
 
     //Set Up mock nav bar
-    [[OEXStyles sharedStyles] applyMockNavigationBarStyleToView:self.mockNavBar label:self.titleLabel leftIconButton: nil];
+    [[OEXStyles sharedStyles] applyMockNavigationBarStyleToView:self.mockNavBar label:self.titleLabel leftIconButton: self.btn_Close];
     
     [self setExclusiveTouch];
 
@@ -252,7 +252,6 @@
     [self.webview_EULA.scrollView setContentOffset:CGPointMake(0, 0)];
     self.view_EULA.hidden = hide;
     self.webview_EULA.hidden = hide;
-    self.btn_Close.hidden = hide;
     self.img_SeparatorEULA.hidden = hide;
 }
 
