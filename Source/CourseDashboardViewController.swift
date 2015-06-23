@@ -30,7 +30,6 @@ struct CourseDashboardItem {
 public class CourseDashboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     private let handouts : BackedStream<String> = BackedStream()
-    private var handoutsHtmlString : String?
     
     private let environment: CourseDashboardViewControllerEnvironment!
     private var course: OEXCourse?
@@ -191,7 +190,7 @@ public class CourseDashboardViewController: UIViewController, UITableViewDataSou
     }
     
     func showHandouts() {
-        if let courseHandouts = self.handoutsHtmlString {
+        if let courseHandouts = self.handouts.value {
             self.environment.router?.showHandouts(courseHandouts, fromViewController: self)
         }
     }
@@ -213,8 +212,7 @@ public class CourseDashboardViewController: UIViewController, UITableViewDataSou
     
     func addListener() {
         handouts.listen(self,
-            success: {[weak self] handouts in
-                self?.handoutsHtmlString = handouts
+            success: {[weak self] _ in
                 self?.handouts.removeBacking()
             }, failure: {[weak self] _ in
                 self?.handouts.removeBacking()
