@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Computed Styles
 - (UIColor*) navigationBarColor;
 - (UIColor*) navigationItemTintColor;
+- (void) applyMockBackButtonStyleToButton : (UIButton*) button;
 - (void) applyMockNavigationBarStyleToView:(UIView*)view label:(UILabel*) label leftIconButton:(nullable UIButton*) iconButton;
 #pragma mark Colors
 

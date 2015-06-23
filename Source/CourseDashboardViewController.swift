@@ -11,10 +11,12 @@ import UIKit
 public class CourseDashboardViewControllerEnvironment : NSObject {
     let config: OEXConfig?
     weak var router: OEXRouter?
+    let networkManager : NetworkManager?
     
-    public init(config: OEXConfig?, router: OEXRouter?) {
+    public init(config: OEXConfig?, router: OEXRouter?, networkManager: NetworkManager) {
         self.config = config
         self.router = router
+        self.networkManager = networkManager
     }
 }
 
@@ -27,6 +29,9 @@ struct CourseDashboardItem {
 
 public class CourseDashboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
+    private let handouts : BackedStream<String> = BackedStream()
+    private var handoutsHtmlString : String?
+    
     private let environment: CourseDashboardViewControllerEnvironment!
     private var course: OEXCourse?
     
@@ -74,6 +79,8 @@ public class CourseDashboardViewController: UIViewController, UITableViewDataSou
         tableView.registerClass(CourseDashboardCell.self, forCellReuseIdentifier: CourseDashboardCell.identifier)
         
         prepareTableViewData()
+        loadHandouts()
+        
         
     }
     
@@ -184,11 +191,34 @@ public class CourseDashboardViewController: UIViewController, UITableViewDataSou
     }
     
     func showHandouts() {
-        // TODO
+        if let courseHandouts = self.handoutsHtmlString {
+            self.environment.router?.showHandouts(courseHandouts, fromViewController: self)
+        }
     }
     
     func showAnnouncements() {
         self.environment.router?.showAnnouncementsForCourseWithID(course?.course_id)
+    }
+    
+    func loadHandouts() {
+        addListener()
+        if let currentCourse = self.course {
+            let request = CourseInfoAPI.getHandoutsFromURLString(currentCourse.courseHandoutsWithoutBaseUrl())
+            if let loader = self.environment.networkManager?.streamForRequest(request, persistResponse: true) {
+                handouts.backWithStream(loader)
+            }
+        }
+        
+    }
+    
+    func addListener() {
+        handouts.listen(self,
+            success: {[weak self] handouts in
+                self?.handoutsHtmlString = handouts
+                self?.handouts.removeBacking()
+            }, failure: {[weak self] _ in
+                self?.handouts.removeBacking()
+        })
     }
     
 }

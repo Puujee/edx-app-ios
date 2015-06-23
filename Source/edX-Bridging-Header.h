@@ -24,6 +24,7 @@
 #import "OEXDateFormatting.h"
 #import "OEXFileUtility.h"
 #import "OEXHelperVideoDownload.h"
+#import "OEXHandoutsViewController.h"
 #import "OEXInterface.h"
 #import "OEXLocalizedString.h"
 #import "OEXPushSettingsManager.h"
