@@ -13,6 +13,7 @@ class OEXLoginViewControllerTests: SnapshotTestCase {
 
     override func setUp() {
         super.setUp()
+        recordMode = true
     }
     
     func testSnapshot() {
