@@ -340,6 +340,7 @@
 		9E7D1BCC1AEA5BF5000AF768 /* OEXDownloadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E7D1BCB1AEA5BF5000AF768 /* OEXDownloadViewController.storyboard */; };
 		9E9AA36C1B3174E300CD7D44 /* CourseLastAccessedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9AA36B1B3174E300CD7D44 /* CourseLastAccessedTests.swift */; };
 		9E9AA36E1B31757800CD7D44 /* CourseStatusInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E9AA36D1B31757800CD7D44 /* CourseStatusInfo.json */; };
+		9EA441C81B393FB70072736E /* OEXLoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA441C71B393FB70072736E /* OEXLoginViewControllerTests.swift */; };
 		9EBED5E81B26CF64007AD266 /* ic_starting_RTL.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED5E71B26CF64007AD266 /* ic_starting_RTL.png */; };
 		9EBED5EA1B26D9F0007AD266 /* bt_facebook_RTL.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED5E91B26D9F0007AD266 /* bt_facebook_RTL.png */; };
 		9EBED5EC1B26D9F8007AD266 /* bt_google_RTL.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED5EB1B26D9F8007AD266 /* bt_google_RTL.png */; };
@@ -944,6 +945,7 @@
 		9E7D1BCB1AEA5BF5000AF768 /* OEXDownloadViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OEXDownloadViewController.storyboard; sourceTree = "<group>"; };
 		9E9AA36B1B3174E300CD7D44 /* CourseLastAccessedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseLastAccessedTests.swift; sourceTree = "<group>"; };
 		9E9AA36D1B31757800CD7D44 /* CourseStatusInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CourseStatusInfo.json; sourceTree = "<group>"; };
+		9EA441C71B393FB70072736E /* OEXLoginViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OEXLoginViewControllerTests.swift; sourceTree = "<group>"; };
 		9EBED5E71B26CF64007AD266 /* ic_starting_RTL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_starting_RTL.png; sourceTree = "<group>"; };
 		9EBED5E91B26D9F0007AD266 /* bt_facebook_RTL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_facebook_RTL.png; sourceTree = "<group>"; };
 		9EBED5EB1B26D9F8007AD266 /* bt_google_RTL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_google_RTL.png; sourceTree = "<group>"; };
@@ -2351,6 +2353,7 @@
 				77567B501AC5EC0400877A7B /* Test Doubles */,
 				BECB7B341924C0C3009C77F1 /* Supporting Files */,
 				9E35A2831B32D7090040B9A9 /* OEXDateFormattingTests.swift */,
+				9EA441C71B393FB70072736E /* OEXLoginViewControllerTests.swift */,
 			);
 			name = Tests;
 			path = Test;
@@ -3070,6 +3073,7 @@
 				770A27AC1A702B6500DFC6FF /* OEXDataParserTests.m in Sources */,
 				B4B6D6401A952D1C000F44E8 /* OEXRegistrationAgreementView.m in Sources */,
 				77E2097F1AF032CC0071316D /* UIControl+OEXBlockActionsTests.m in Sources */,
+				9EA441C81B393FB70072736E /* OEXLoginViewControllerTests.swift in Sources */,
 				77F76A701B0BD5EC00ED3E39 /* OEXSession+AuthorizationTests.swift in Sources */,
 				194E01921A54204B00A0CFAE /* OEXDBTests.m in Sources */,
 				7772BE8C1AF8389F0081CA7A /* Array+FunctionalTests.swift in Sources */,
