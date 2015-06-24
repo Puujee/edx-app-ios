@@ -56,7 +56,7 @@ static OEXStyles* sSharedStyles;
 }
 
 - (void) applyNavigationItemStyleToButton : (UIButton*) button {
-    [button setImage:[button.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [button setImage:[[button imageForState:UIControlStateNormal] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [button.imageView setTintColor: [self navigationItemTintColor]];
 }
 

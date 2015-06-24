@@ -10,10 +10,6 @@ import UIKit
 import XCTest
 
 class OEXLoginViewControllerTests: SnapshotTestCase {
-
-    override func setUp() {
-        super.setUp()
-    }
     
     func testSnapshot() {
         let controller = UIStoryboard(name: "OEXLoginViewController", bundle: nil).instantiateViewControllerWithIdentifier("LoginView") as! OEXLoginViewController

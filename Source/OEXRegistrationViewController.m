@@ -63,8 +63,8 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
 
 @property (strong, nonatomic) IBOutlet UIScrollView* scrollView;
 @property (strong, nonatomic) IBOutlet UILabel* titleLabel;
-@property (weak, nonatomic) IBOutlet UIView *mockNavigationBarView;
-@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (strong, nonatomic) IBOutlet UIView *mockNavigationBarView;
+@property (strong, nonatomic) IBOutlet UIButton *closeButton;
 
 // Used in auth from an external provider
 @property (strong, nonatomic) UIView* currentHeadingView;
