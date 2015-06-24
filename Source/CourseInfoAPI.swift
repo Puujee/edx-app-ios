@@ -12,13 +12,12 @@ import UIKit
 public struct CourseInfoAPI {
     
     static func handoutsDeserializer(response : NSHTTPURLResponse?, data : NSData?) -> Result<String> {
-        return data.toResult(nil).flatMap {data -> Result<AnyObject> in
+        return data.toResult(nil).flatMap {data -> Result<JSON> in
             var error : NSError? = nil
-            let result : AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(), error: &error)
+            let result : JSON? = JSON(data: data, options: NSJSONReadingOptions(), error: &error)
             return result.toResult(error)
             }.flatMap {json in
-                let jsonObject = JSON(json)
-                return jsonObject["handouts_html"].string.toResult(NSError.oex_unknownError())
+                return json["handouts_html"].string.toResult(NSError.oex_unknownError())
         }
     }
     

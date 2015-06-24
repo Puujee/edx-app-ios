@@ -13,7 +13,7 @@ public class CourseDashboardViewControllerEnvironment : NSObject {
     weak var router: OEXRouter?
     let networkManager : NetworkManager?
     
-    public init(config: OEXConfig?, router: OEXRouter?, networkManager: NetworkManager) {
+    public init(config: OEXConfig?, router: OEXRouter?, networkManager: NetworkManager?) {
         self.config = config
         self.router = router
         self.networkManager = networkManager
@@ -200,7 +200,6 @@ public class CourseDashboardViewController: UIViewController, UITableViewDataSou
     }
     
     func loadHandouts() {
-        addListener()
         if let currentCourse = self.course {
             let request = CourseInfoAPI.getHandoutsFromURLString(currentCourse.courseHandoutsWithoutBaseUrl())
             if let loader = self.environment.networkManager?.streamForRequest(request, persistResponse: true) {
@@ -209,16 +208,6 @@ public class CourseDashboardViewController: UIViewController, UITableViewDataSou
         }
         
     }
-    
-    func addListener() {
-        handouts.listen(self,
-            success: {[weak self] _ in
-                self?.handouts.removeBacking()
-            }, failure: {[weak self] _ in
-                self?.handouts.removeBacking()
-        })
-    }
-    
 }
 
 // MARK: Testing
