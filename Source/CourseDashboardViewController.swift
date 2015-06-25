@@ -200,8 +200,8 @@ public class CourseDashboardViewController: UIViewController, UITableViewDataSou
     }
     
     func loadHandouts() {
-        if let currentCourse = self.course {
-            let request = CourseInfoAPI.getHandoutsFromURLString(currentCourse.course_handouts)
+        if let currentCourse = self.course, handoutsURLString = currentCourse.course_handouts {
+            let request = CourseInfoAPI.getHandoutsFromURLString(handoutsURLString)
             if let loader = self.environment.networkManager?.streamForRequest(request, persistResponse: true) {
                 handouts.backWithStream(loader)
             }
