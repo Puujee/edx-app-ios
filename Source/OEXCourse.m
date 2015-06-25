@@ -55,11 +55,6 @@
     return self;
 }
 
-- (NSString*) courseHandoutsWithoutBaseUrl {
-    NSRange range = [self.course_handouts rangeOfString:@"/api"];
-    return [self.course_handouts substringFromIndex:range.location];
-}
-
 - (BOOL)isStartDateOld {
     return [self.start oex_isInThePast];
 }
